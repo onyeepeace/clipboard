@@ -1,0 +1,343 @@
+// Colors
+$strongCyan: hsl(171, 66%, 44%);
+$lightBlue: hsl(233, 100%, 69%);
+$darkGrayishBlue: hsl(210, 10%, 33%);
+$grayishBlue: hsl(201, 11%, 66%);
+
+// Mixins
+@mixin button {
+    a {
+        display: block;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 35px;
+    }
+    #green {
+        background-color: $strongCyan;
+        margin-bottom: 25px;
+        box-shadow: 0 3px 2px rgba(40, 153, 136, 100);
+    }
+    #purple {
+        background-color: $lightBlue;
+        margin-bottom: 8rem;
+        box-shadow: 0 3px 2px rgba(67, 87, 241, 100);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 18px;
+    h1 {
+        font-size: 31px;
+        color: $darkGrayishBlue;
+        padding-bottom: 15px;
+    }
+    h3 {
+        font-size: 28px;
+        color: $darkGrayishBlue;
+        padding-bottom: 15px;
+    }
+    p {
+        color: $grayishBlue;
+        font-size: 17px;
+        padding-bottom: 4rem;
+        line-height: 2rem;
+    }
+}
+
+html, body {
+    min-height: 100vh;
+}
+
+body {
+    margin-top: 8rem;
+    font-family: 'Bai Jamjuree', sans-serif;
+    background-image: url(/images/bg-header-mobile.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: center;
+}
+
+header, section {
+    width: 85%;
+    margin: 0 auto; 
+}
+
+img {
+    width: 100%;
+}
+
+a:hover {
+    opacity: 0.5;
+}
+
+header {
+    img {
+        display: block;
+        width: 30%;
+        margin: 0 auto 50px;
+    }
+    p {
+        padding-bottom: 3rem;
+    }
+    @include button;
+}
+
+.keep {
+    img {
+        padding-bottom: 2.5rem;
+    }
+    p {
+        padding-bottom: 3rem;
+    }
+    .complete p {
+        padding-bottom: 10rem;
+    }
+}
+
+.access {
+    img {
+        padding-bottom: 6rem;
+    }
+    .work {
+        img {
+            width: 15%;
+            margin: 1.5rem auto 0;
+            padding: 0 0 2rem;
+        }
+        p{
+            padding-bottom: 3rem;
+        }
+    }
+}
+
+.fang {
+    margin-top: 5rem;
+    img {
+        width: 40%;
+        margin: 0 auto 4rem;
+        display: block;
+    }
+    #vector {
+        margin-bottom: 0;
+    }
+}
+
+.clip {
+    padding: 12rem 0;
+    p {
+        font-size: 22px;
+    }
+    @include button;
+    #purple {
+        margin-bottom: 0;
+    }
+}
+
+footer {
+    background-color: rgb(246, 246, 246);
+    .all {
+        width: 100%;
+        margin: 0 auto;
+        padding: 3rem 0;
+        img {
+            display: block;
+            width: 15%;
+            margin: 0 auto 50px;
+        }
+        .links a {
+            display: block;
+            color: $darkGrayishBlue;
+            text-decoration: none;
+            font-size: 22px;
+            padding: 1rem;
+        }
+        .social-media {
+            margin-top: 3rem;
+            a {
+                color: $darkGrayishBlue;
+                text-decoration: none;
+                font-size: 24px;
+                padding: 0 1rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:760px) {
+    :root {
+        h1 {
+            font-size: 40px;
+        }
+        h3 {
+            font-size: 36px;
+        }
+        p {
+            font-size: 24px;
+        }
+    }
+
+    body {
+        margin-top: 12rem;
+    }
+
+    header, section {
+        width: 70%;
+        margin: 0 auto; 
+    }
+    
+    #green, #purple {
+        font-size: 22px;
+    }
+
+    .clip p {
+        font-size: 26px;
+    }
+
+    footer .all {
+        padding: 10rem 0 3rem;
+        .links a {
+            font-size: 26px;
+        }
+        .social-media a {
+            font-size: 28px;
+        }
+    }
+}
+
+@media screen and (min-width:1024px) {
+    :root {
+        h1 {
+            font-size: 31px;
+        }
+        h3 {
+            font-size: 28px;
+        }
+        p {
+            font-size: 20px;
+            padding-bottom: 2rem;
+        }
+    }
+
+    body {
+        margin-top: 6rem;
+        background-image: url(/images/bg-header-desktop.png);
+    }
+
+    header, section {
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    header img {
+        width: 10%;
+    }
+
+    #green, #purple {
+        display: inline-block;
+        margin: 0 1rem;
+    }
+
+    .track {
+        margin-top: 4rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 4rem;
+    }
+    
+    .access {
+        img {
+            width: 50%;
+            padding-bottom: 2rem;
+        }
+    }
+
+    .work {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 4rem;
+    }
+
+    .fang {
+        margin-top: 5rem;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        img {
+            width: 50%;
+            margin: 0 auto;
+        }
+    }
+
+    .clip {
+        padding: 7rem 0;
+    }
+
+    footer {
+        .all {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            padding: 2rem 0;
+            img {
+                margin: 0 auto;
+            }
+            .links {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                a {
+                    font-size: 20px;
+                    padding: 0.5rem;
+                    text-align: start;
+                }
+            }
+            .social-media {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    :root {
+        h1 {
+            font-size: 50px;
+        }
+        h3 {
+            font-size: 46px;
+        }
+        p {
+            font-size: 34px;
+            padding-bottom: 4rem;
+            line-height: 4rem;
+        }
+    }
+
+    #green, #purple {
+        font-size: 32px;
+        padding: 20px 60px;
+        border-radius: 50px;
+    }
+
+    .clip p {
+        font-size: 36px;
+    }
+
+    footer .all {
+        padding: 4rem 0;
+        .links a {
+            font-size: 36px;
+        }
+        .social-media a {
+            font-size: 48px;
+        }
+    }
+}
